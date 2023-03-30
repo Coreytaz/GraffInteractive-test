@@ -20,8 +20,8 @@ export interface OptionRadioGroup {
 export const Radio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(({ className, labelPlaceholder, ...props }, ref) => {
     return (
         <div className={cn(className, styles.inputWrapper)}>
-            <input type="radio" ref={ref} id={labelPlaceholder} {...props} className={cn(styles.input)} />
-            <label htmlFor={labelPlaceholder}>{labelPlaceholder}</label>
+            <input type="radio" ref={ref} id={props.id} {...props} className={cn(styles.input)} />
+            <label htmlFor={props.id}>{labelPlaceholder}</label>
         </div>
     );
 });
@@ -38,6 +38,7 @@ const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
                     value={label}
                     labelPlaceholder={label}
                     key={optionId}
+                    id={optionId}
                     name={name}
                     disabled={disabled}
                     defaultChecked={index === 0}
