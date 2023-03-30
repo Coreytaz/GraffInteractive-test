@@ -1,1 +1,1 @@
-export { default as Checkbox } from './ui/index'
+export { default as CheckboxGroup } from './ui/index'
