@@ -17,7 +17,7 @@ const ArrowLeft: FC<AbstractPropsIcon> = ({
             fill={filled ? fill : 'none'}
             xmlns="http://www.w3.org/2000/svg"
             {...props}>
-            <path d="M6 12L18 12M6 12L12.3636 6M6 12L12.3636 18" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 12L18 12M6 12L12.3636 6M6 12L12.3636 18" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
 }

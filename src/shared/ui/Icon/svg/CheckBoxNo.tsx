@@ -17,7 +17,7 @@ const CheckBoxNo: FC<AbstractPropsIcon> = ({
             fill={filled ? fill : 'none'}
             xmlns="http://www.w3.org/2000/svg"
             {...props}>
-            <rect x="4" y="4" width="16" height="16" rx="1" stroke="white" stroke-width="2" />
+            <rect x="4" y="4" width="16" height="16" rx="1" stroke="white" strokeWidth="2" />
         </svg>
     )
 }

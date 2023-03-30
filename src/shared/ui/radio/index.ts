@@ -1,1 +1,1 @@
-export { default as Radio } from './ui/index'
+export { default as RadioButtonGroup } from './ui/index'

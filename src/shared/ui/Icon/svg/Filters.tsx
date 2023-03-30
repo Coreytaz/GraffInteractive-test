@@ -17,12 +17,12 @@ const Filters: FC<AbstractPropsIcon> = ({
             fill={filled ? fill : 'none'}
             xmlns="http://www.w3.org/2000/svg"
             {...props}>
-            <path d="M10 15L20 15" stroke="white" stroke-width="2" stroke-linecap="round" />
-            <path d="M14 9L4 9" stroke="white" stroke-width="2" stroke-linecap="round" />
-            <path d="M4 15L6 15" stroke="white" stroke-width="2" stroke-linecap="round" />
-            <path d="M20 9L18 9" stroke="white" stroke-width="2" stroke-linecap="round" />
-            <circle cx="8" cy="15" r="2" stroke="white" stroke-width="2" stroke-linecap="square" />
-            <circle cx="3" cy="3" r="2" transform="matrix(-1 0 0 1 19 6)" stroke="white" stroke-width="2" stroke-linecap="square" />
+            <path d="M10 15L20 15" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <path d="M14 9L4 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <path d="M4 15L6 15" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <path d="M20 9L18 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="8" cy="15" r="2" stroke="white" strokeWidth="2" strokeLinecap="square" />
+            <circle cx="3" cy="3" r="2" transform="matrix(-1 0 0 1 19 6)" stroke="white" strokeWidth="2" strokeLinecap="square" />
         </svg>
     )
 }

@@ -17,7 +17,7 @@ const ChevronUp: FC<AbstractPropsIcon> = ({
             fill={filled ? fill : 'none'}
             xmlns="http://www.w3.org/2000/svg"
             {...props}>
-            <path d="M19 15L12 8L5 15" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19 15L12 8L5 15" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
 
     )
