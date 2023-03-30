@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../../shared/ui/Button";
 import { Checkbox } from "../../shared/ui/checkbox";
 import { Icon } from "../../shared/ui/Icon";
 import { RadioButtonGroup } from "../../shared/ui/radio";
@@ -29,6 +30,9 @@ const IndexPage = () => {
             </div>
             <div style={{ margin: '20px' }}>
                 <Checkbox labelPlaceholder={"check"} />
+            </div>
+            <div style={{ margin: '20px' }}>
+                <Button icon={<Icon.ChevronDown />}>qweqweqwe</Button>
             </div>
         </>
     )

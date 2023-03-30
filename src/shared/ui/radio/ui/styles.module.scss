@@ -1,5 +1,5 @@
 .inputWrapper {
-    margin-bottom: 5px;
+    margin-bottom: 22px;
     display: flex;
     align-items: center;
     & label {
@@ -9,8 +9,8 @@
 
     & input[type=radio] {
         cursor: pointer;
-        height: 1.2rem;
-        width: 1.2rem;
+        height: 18px;
+        width: 18px;
         margin-right: 0.7rem;
         appearance: none;
         -webkit-appearance: none;
