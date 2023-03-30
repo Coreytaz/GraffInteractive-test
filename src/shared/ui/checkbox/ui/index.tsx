@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, forwardRef } from "react";
+import { ButtonHTMLAttributes, Dispatch, FC, forwardRef, useId } from "react";
 import cn from 'clsx'
 import styles from './styles.module.scss'
 
@@ -14,7 +14,7 @@ export interface Option {
 
 export interface OptionCheckboxGroup {
     options: Option[];
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChange: Dispatch<React.SetStateAction<String[]>>
     value: String[]
 }
 
@@ -29,6 +29,19 @@ export const Checkbox: FC<CheckboxProps> = forwardRef<HTMLInputElement, Checkbox
 
 
 const CheckboxGroup: FC<OptionCheckboxGroup> = ({ options, onChange, value }) => {
+    const passwordHintId = useId();
+
+    function drinkSelectionCheckboxHandler(event: React.ChangeEvent<HTMLInputElement>) {
+        const { id } = event.target;
+        const currentId = id.replace('checkbox-option-', "")
+        if (value.includes(currentId)) {
+            onChange((prev) => prev.filter((item) => item !== currentId))
+            return
+        }
+        onChange((prev) => [...prev, currentId]);
+        return
+    }
+
     function renderOptions() {
         return options.map(({ label, name, disabled }: Option) => {
             const defaultChecked = value.includes(label)
@@ -40,10 +53,10 @@ const CheckboxGroup: FC<OptionCheckboxGroup> = ({ options, onChange, value }) =>
                     labelPlaceholder={label}
                     id={optionId}
                     key={optionId}
-                    name={name}
+                    name={passwordHintId}
                     disabled={disabled}
                     defaultChecked={defaultChecked}
-                    onChange={onChange}
+                    onChange={drinkSelectionCheckboxHandler}
                 />
             )
         })

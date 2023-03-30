@@ -17,14 +17,14 @@
         appearance: none;
         -webkit-appearance: none;
         border-radius: 0.20rem;
-        box-shadow: 0 0 0 3px var(--color-gray);
+        box-shadow: 0 0 0 2px var(--color-gray);
 
         &:hover {
             border-width: 0;
         }
 
         &:checked {
-            box-shadow: 0 0 0 3px var(--color-white);
+            box-shadow: 0 0 0 2px var(--color-white);
             background-color: var(--color-white);
             border-width: 0;
 

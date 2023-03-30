@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, forwardRef } from 'react'
+import { ButtonHTMLAttributes, Dispatch, FC, forwardRef, useId } from 'react'
 import styles from './styles.module.scss'
 import cn from 'clsx'
 
@@ -14,7 +14,7 @@ export interface Option {
 
 export interface OptionRadioGroup {
     options: Option[];
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChange: Dispatch<React.SetStateAction<String>>
 }
 
 export const Radio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(({ className, labelPlaceholder, ...props }, ref) => {
@@ -27,7 +27,11 @@ export const Radio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(({
 });
 
 const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
-
+    const passwordHintId = useId();
+    function drinkSelectionHandler(event: React.ChangeEvent<HTMLInputElement>) {
+        const currentId = event.target.value.replace('radio-option-', "")
+        onChange(currentId);
+    }
     function renderOptions() {
         return options.map(({ label, name, disabled }: Option, index) => {
             const shortenedOptionLabel = label.replace(/\s+/g, "");
@@ -39,10 +43,10 @@ const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
                     labelPlaceholder={label}
                     key={optionId}
                     id={optionId}
-                    name={name}
+                    name={passwordHintId}
                     disabled={disabled}
                     defaultChecked={index === 0}
-                    onChange={onChange}
+                    onChange={drinkSelectionHandler}
                 />
             );
         });
