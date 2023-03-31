@@ -5,6 +5,7 @@ body,
     margin: 0;
     position: relative;
     height: 100%;
+    color: var(--color-white);
 }
 
 span {
@@ -17,6 +18,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: var(--color-white);
     margin: 0;
 }
 

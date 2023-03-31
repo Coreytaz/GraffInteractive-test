@@ -4,6 +4,7 @@ import { CheckboxGroup } from "../../shared/ui/checkbox";
 import { Icon } from "../../shared/ui/Icon";
 import { RadioButtonGroup } from "../../shared/ui/radio";
 import { InputList } from "../../entities/InputList";
+import { ProductRowCard } from "../../entities/product";
 
 const IndexPage = () => {
     const drinks = [
@@ -34,6 +35,9 @@ const IndexPage = () => {
             </div>
             <div style={{ margin: '20px' }}>
                 <InputList value={selectedCheckbox} action={<CheckboxGroup options={drinks} value={selectedCheckbox} onChange={setSelectedCheckbox} />} />
+            </div>
+            <div style={{ margin: '20px' }}>
+                <ProductRowCard />
             </div>
         </>
     )
