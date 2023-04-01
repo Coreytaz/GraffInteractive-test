@@ -22,6 +22,10 @@
         cursor: pointer;
     }
 
+    &:hover {
+        filter: brightness(55%);
+    }
+
     & input[type=radio] {
         cursor: pointer;
         height: 18px;
