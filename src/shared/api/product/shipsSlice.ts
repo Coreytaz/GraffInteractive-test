@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Ships } from "../../types/types";
-import { FilterSliceState } from "../../../pages/index/filtersSlice";
 
 interface ShipsSliceType {
   ships: Ships | null;
@@ -22,8 +21,7 @@ export const getShipsProduct = createAsyncThunk<
       type?: { $in: string[] } | undefined;
       $text?: { $search: string } | undefined;
     };
-  },
-  { state: { filterSlice: FilterSliceState } }
+  }
 >("ships/get-ships-product", async function (body, { rejectWithValue }) {
   try {
     const response = await fetch("https://api.spacexdata.com/v4/ships/query", {
