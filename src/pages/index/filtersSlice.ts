@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface FilterSliceState {
-  search: string | null;
-  filtersType: string | null;
-  filtersPort: string[] | null;
-  page: number | null;
+  search: string;
+  filtersType: string;
+  filtersPort: string[];
+  page: number;
 }
 
 const initialState: FilterSliceState = {
-  search: null,
-  filtersType: null,
-  filtersPort: null,
-  page: null,
+  search: '',
+  filtersType: '',
+  filtersPort: [],
+  page: 1,
 };
 
 export const filterSlice = createSlice({
