@@ -36,7 +36,6 @@ const CheckboxGroup: FC<OptionCheckboxGroup> = ({ options, setPort, value }) => 
 
     function drinkSelectionCheckboxHandler(event: React.ChangeEvent<HTMLInputElement>) {
         const { id } = event.target;
-        console.log(id)
         const currentId = id.replace('checkbox-option-', "")
         if (value.includes(currentId)) {
             const newValue = value.filter((item) => item !== currentId)

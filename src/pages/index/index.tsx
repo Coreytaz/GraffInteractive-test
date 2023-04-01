@@ -1,5 +1,3 @@
-import { useActionShips } from "../../shared/api/product/hooks";
-import { shipsApi } from "../../shared/api/product/shipsApi";
 import useTitle from "../../shared/lib/useTitle";
 import Content from "./Content";
 import Sidebar from "./Sidebar";

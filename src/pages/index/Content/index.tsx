@@ -29,7 +29,6 @@ const useFilters = () => {
             ? { home_port: { $in: port } }
             : undefined;
 
-    console.log(bodyHome_port)
     return {
         query: {
             ...bodySearch,
@@ -80,7 +79,6 @@ const Content: FC = () => {
 
 const ProudctSection = () => {
     const { ships, status } = useSelector((state: TypeRootState) => state.ShipsSlice)
-    console.log(ships)
 
     if (status === 'loading') {
         return (

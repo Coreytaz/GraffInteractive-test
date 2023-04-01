@@ -5,9 +5,6 @@ import {
   DelimitedArrayParam,
   NumberParam,
 } from "use-query-params";
-import { useActionFiltert } from "./hooks";
-import { useSelector } from "react-redux";
-import { TypeRootState } from "../../app/store";
 
 export const useSearchParam = () => {
   const { _setPage } = useFilterByPage();
