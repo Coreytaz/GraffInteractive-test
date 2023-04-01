@@ -17,8 +17,8 @@ export interface Option {
 
 export interface OptionCheckboxGroup {
     options: Option[];
-    setPort: (newValue: NewValueType<(string | null)[] | null | undefined>, updateType?: UrlUpdateType | undefined) => void
-    value: String[]
+    setPort: (value: string[]) => void
+    value: string[]
 }
 
 export const Checkbox: FC<CheckboxProps> = forwardRef<HTMLInputElement, CheckboxProps>(({ className, labelPlaceholder, ...props }, ref) => {
@@ -38,13 +38,13 @@ const CheckboxGroup: FC<OptionCheckboxGroup> = ({ options, setPort, value }) => 
         const { id } = event.target;
         console.log(id)
         const currentId = id.replace('checkbox-option-', "")
-        console.log(currentId)
         if (value.includes(currentId)) {
-            setPort((prev) => prev?.filter((item) => item !== currentId))
-            return
+            const newValue = value.filter((item) => item !== currentId)
+            setPort(newValue)
+        } else {
+            const newValue = [...value, currentId]
+            setPort(newValue);
         }
-        setPort((prev) => [...prev!, currentId]);
-        return
     }
 
     function renderOptions() {
