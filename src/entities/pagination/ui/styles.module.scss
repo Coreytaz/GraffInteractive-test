@@ -1,12 +1,25 @@
 .paginationWrapper {
   & > button {
+    & > span {
+      min-width: 32px;
+    }
     justify-content: space-between;
     width: 32px;
     padding: 0;
   }
-  display: flex;
+  .right {
+    & > span {
+      justify-content: flex-end;
+    }
+  }
+  .left {
+    & > span {
+      justify-content: flex-start;
+    }
+  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-between;
   width: 100px;
   height: 70px;
   & > div {

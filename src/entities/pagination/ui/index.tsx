@@ -14,9 +14,9 @@ const Pagination: FC<PaginationProps> = ({ value, setPage }) => {
     const { ships } = useSelector((state: TypeRootState) => state.ShipsSlice)
     return (
         <div className={styles.paginationWrapper}>
-            <Button onClick={() => setPage(ships?.prevPage!)} icon={<Icon.ChevronLeft />} disabled={value === 1} />
+            <Button className={styles.left}  onClick={() => setPage(ships?.prevPage!)} icon={<Icon.ChevronLeft />} disabled={value === 1} />
             <div>{value}</div>
-            <Button onClick={() => setPage(ships?.nextPage!)} icon={<Icon.ChevronRight />} disabled={ships?.totalPages === value} />
+            <Button className={styles.right} onClick={() => setPage(ships?.nextPage!)} icon={<Icon.ChevronRight />} disabled={ships?.totalPages === value} />
         </div>
     )
 }
