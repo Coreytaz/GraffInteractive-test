@@ -64,13 +64,11 @@ const ProductPage: FC = () => {
                             <span>Год</span><span>{ships?.year_built}</span>
                         </div>
                     </div>
-                    <div className={styles.mission}>
+                    <div className={styles.img}>
                         <span>
-                            Миссии
+                            Картинка
                         </span>
-                        <p>
-                            SES-9, CRS-8, Thaicom 8, ABS-2A / Eutelsat 117W B, JCSAT-16, SES-10, BulgariaSat-1, SES-11 / Echostar 105, KoreaSat 5A, Falcon Heavy Test Flight, TESS, Bangabandhu-1, Telstar 19V, Merah Putih, Telstar 18V, Es’hail 2, Nusantara Satu (PSN-6) / S5 / Beresheet, CCtCap Demo Mission 1, ArabSat 6A, CRS-17, Starlink v0.9, STP-2, Starlink 1, JCSat 18 / Kacific 1, Starlink 2, Starlink 3, Starlink 4, Starlink 5
-                        </p>
+                        <img src={ships?.image!} />
                     </div>
                 </div>
             </section>

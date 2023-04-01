@@ -77,8 +77,11 @@
         }
       }
     }
-    & .mission {
+    & .img {
       margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       & > span {
         font-family: var(--font-family-primary);
         font-style: normal;
@@ -87,13 +90,10 @@
         line-height: 1rem;
         color: #818798;
       }
-      & > p {
-        max-width: 642px;
-        font-family: var(--font-family-primary);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 140%;
+      & > img {
+        object-fit: cover;
+        max-width: 350px;
+        height: 300px;
       }
     }
   }
