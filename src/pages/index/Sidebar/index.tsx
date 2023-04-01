@@ -28,8 +28,9 @@ const Sidebar: FC<{ className?: String; onClose?: () => void }> = ({ className, 
 }
 
 const SearchSection = () => {
-    const [value, setValue] = useState("");
     const params = catalogParams.useSearchParam()
+    console.log(params.search)
+    const [value, setValue] = useState(params.search);
 
     const delayedSearch = useCallback(
         debounce((q) => params.setSearch(q)
