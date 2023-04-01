@@ -1,7 +1,9 @@
 import { ButtonHTMLAttributes, Dispatch, FC, forwardRef, useId } from 'react'
 import styles from './styles.module.scss'
 import cn from 'clsx'
+import { UrlUpdateType } from 'use-query-params';
 
+type NewValueType<D> = D | ((latestValue: D) => D)
 export interface RadioProps extends ButtonHTMLAttributes<HTMLInputElement> {
     labelPlaceholder: string
 }
@@ -13,8 +15,10 @@ export interface Option {
 }
 
 export interface OptionRadioGroup {
+    value: string;
     options: Option[];
-    onChange: Dispatch<React.SetStateAction<String>>
+    onChange: (nextValue: string) => void;
+    labelPlaceholder: String
 }
 
 export const Radio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(({ className, labelPlaceholder, ...props }, ref) => {
@@ -26,7 +30,7 @@ export const Radio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(({
     );
 });
 
-const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
+const RadioButtonGroup: FC<OptionRadioGroup> = ({ value, options, onChange, labelPlaceholder }) => {
     const passwordHintId = useId();
     function drinkSelectionHandler(event: React.ChangeEvent<HTMLInputElement>) {
         const currentId = event.target.value.replace('radio-option-', "")
@@ -45,7 +49,7 @@ const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
                     id={optionId}
                     name={passwordHintId}
                     disabled={disabled}
-                    defaultChecked={index === 0}
+                    defaultChecked={value === label}
                     onChange={drinkSelectionHandler}
                 />
             );
@@ -53,7 +57,10 @@ const RadioButtonGroup: FC<OptionRadioGroup> = ({ options, onChange }) => {
     }
 
     return (
-        <div>
+        <div className={styles.wrapperGroupRadio}>
+            <label>
+                {labelPlaceholder}
+            </label>
             {renderOptions()}
         </div>
     );

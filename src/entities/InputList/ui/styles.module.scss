@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    & label {
+    & > label {
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 4px;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;

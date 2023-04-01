@@ -1,9 +1,9 @@
 import compose from "compose-function";
-import withRouter from "./with-router";
+import withProvider from "./with-provider";
 
 /**
  * @hoc Инициализирующая логика приложения
  * @remark Содержит:
  * - логику инициализации роутера (withRouter)
  */
-export const withHocs = compose(withRouter);
+export const withHocs = compose(withProvider);

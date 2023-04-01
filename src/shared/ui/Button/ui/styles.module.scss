@@ -1,6 +1,10 @@
 .button {
+    & > span {
+        display: flex;
+    }
     cursor: pointer;
     display: flex;
+    align-items: center;
     font-family: var(--font-family-primary);
     font-size: 1.15rem;
     font-weight: 500;

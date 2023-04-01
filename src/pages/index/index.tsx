@@ -1,45 +1,16 @@
-import { useState } from "react";
-import { Button } from "../../shared/ui/Button";
-import { CheckboxGroup } from "../../shared/ui/checkbox";
-import { Icon } from "../../shared/ui/Icon";
-import { RadioButtonGroup } from "../../shared/ui/radio";
-import { InputList } from "../../entities/InputList";
-import { ProductRowCard } from "../../entities/product";
+import { useActionShips } from "../../shared/api/product/hooks";
+import { shipsApi } from "../../shared/api/product/shipsApi";
+import useTitle from "../../shared/lib/useTitle";
+import Content from "./Content";
+import Sidebar from "./Sidebar";
 
 const IndexPage = () => {
-    const drinks = [
-        {
-            label: "Coffee",
-            name: "drink-types",
-        },
-        {
-            label: "Tea",
-            name: "drink-types",
-        },
-    ];
-    const [selectedValue, setSelectedValue] = useState<String>(drinks[0].label);
-    const [selectedCheckbox, setSelectedCheckbox] = useState<String[]>(['Tea']);
+    useTitle("SpaceX Ships");
     return (
-        <>
-            <div style={{ margin: '20px' }}>
-                <Icon.ArrowLeft />
-            </div>
-            <div style={{ margin: '20px' }}>
-                <RadioButtonGroup options={drinks} onChange={setSelectedValue} />
-            </div>
-            <div style={{ margin: '20px' }}>
-
-            </div>
-            <div style={{ margin: '20px' }}>
-                <Button icon={<Icon.ChevronDown />}>qweqweqwe</Button>
-            </div>
-            <div style={{ margin: '20px' }}>
-                <InputList value={selectedCheckbox} action={<CheckboxGroup options={drinks} value={selectedCheckbox} onChange={setSelectedCheckbox} />} />
-            </div>
-            <div style={{ margin: '20px' }}>
-                <ProductRowCard />
-            </div>
-        </>
+        <div className="container">
+            <Content />
+            <Sidebar />
+        </div>
     )
 }
 

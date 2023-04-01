@@ -5,3 +5,17 @@ body {
     font-size: var(--font-size-primary);
     background-color: var(--color-dark);
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+@media (width < 960px) {
+.container {
+    position: relative;
+    flex-direction: column;
+}
+}

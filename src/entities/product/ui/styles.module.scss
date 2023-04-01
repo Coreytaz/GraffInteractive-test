@@ -1,18 +1,18 @@
 .rootCard {
-    position: relative;
     cursor: pointer;
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 16px;
     border-radius: 8px;
-    padding: 32px;
+    padding: 25px;
     background-color: var(--color-gray-dark);
     & .productTitle {
         font-family: var(--font-family-primary);
         font-style: normal;
         font-weight: 500;
-        font-size: 1.4rem;
+        font-size: 1rem;
         line-height: 1.9rem;
     }
     & .characteristics {
@@ -69,9 +69,6 @@
     }
     & .arrowRight {
         display: none;
-    }
-    & .productTitle {
-        font-size: 1rem;
     }
 }
 }
