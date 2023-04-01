@@ -51,25 +51,25 @@ const ProductPage: FC = () => {
                         <h2>{ships?.name}</h2>
                     </div>
                     <div className={styles.characteristics}>
-                        <div className={styles.type}>
+                        {ships?.type && <div className={styles.type}>
                             <span>Тип</span><span>{ships?.type}</span>
-                        </div>
-                        <div className={styles.port}>
+                        </div>}
+                        {ships?.home_port && <div className={styles.port}>
                             <span>Порт</span><span>{ships?.home_port}</span>
-                        </div>
-                        <div className={styles.weight}>
+                        </div>}
+                        {ships?.mass_kg && <div className={styles.weight}>
                             <span>Вес</span><span>{ships?.mass_kg} кг</span>
-                        </div>
-                        <div className={styles.years}>
+                        </div>}
+                        {ships?.year_built && <div className={styles.years}>
                             <span>Год</span><span>{ships?.year_built}</span>
-                        </div>
+                        </div>}
                     </div>
-                    <div className={styles.img}>
+                    {ships?.image ? <div className={styles.img}>
                         <span>
                             Картинка
                         </span>
                         <img src={ships?.image!} />
-                    </div>
+                    </div> : null}
                 </div>
             </section>
         </div>
