@@ -10,7 +10,7 @@ const ProductPage: FC = () => {
     const navigate = useNavigate();
     let { id } = useParams()
     const { data: ships, isLoading, isError } = shipsApi.useGetShipsQuery(id)
-    useTitle(`${ships ? ships.name : "Книга не найдена"} | SpaceX Ships`);
+    useTitle(`${ships ? ships.name : "Корабль не найдена"} | SpaceX Ships`);
 
     const onPushBack = () => {
         if (window.history.state && window.history.state.idx > 0) {
